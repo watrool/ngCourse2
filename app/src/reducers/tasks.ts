@@ -5,7 +5,7 @@ TASK_DELETED,
 TASK_UPDATED,
 TASK_MARKED,
 } from '../actions/tasks';
-import {TaskMap} from '../services/tasks-service';
+
 import {fromJS, List, Map} from 'immutable';
 
 const initialState = fromJS([{
@@ -34,6 +34,27 @@ export default function tasks(state = initialState, action) {
   switch (action.type) {
     case TASKS_LOADED:
       return state;
+    case TASK_ADDED:
+      return state.push(fromJS(action.payload))
+     case TASK_UPDATED:
+      const updateIndex = state.findIndex((task: Map<string,any>) =>
+        task.get('_id') === action.payload._id
+      );
+      return state.set(updateIndex, Map(action.payload)); 
+     case TASK_DELETED:
+       const deleteIndex = state.findIndex((task: Map<string, any>) =>
+         task.get('_id') === action.payload
+       );
+       return state.delete(deleteIndex);
+     case TASK_MARKED:
+      let { taskId, newStatus } = action.payload;
+
+      const markIndex = state.findIndex((task: Map<string, any>) =>
+         task.get('_id') ===  taskId
+       );
+      return state.update(markIndex, (task: Map<string, any>) =>
+         task.set('done', newStatus)
+       ); 
 
     default:
       return state;

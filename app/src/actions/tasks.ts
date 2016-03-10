@@ -14,35 +14,33 @@ export function loadTasks() {
   
 }
 
-export function addTask(/* To Be Completed */) {
+export function addTask(task: any) {
  
   return {
-    type: 'TBC',
-    payload: {}
+    type: TASK_ADDED,
+    payload: task
   }
 }
 
-export function deleteTask(/* To Be Completed */) {
+export function deleteTask(taskId) {
   return {
-    type: 'TBC',
-    payload: {}
+    type: TASK_DELETED,
+    payload: taskId
   }
 }
 
-export function updateTask(/* To Be Completed */) {
+export function updateTask(task) {
   return {
-    type: 'TBC',
-    payload: {}
+    type: TASK_UPDATED,
+    payload: task
   }
 }
 
-export function markTask(/* TO BE COMPLETED*/) {
+export function markTask(taskId, newStatus) {
 // NOTE: 'status' field is not implemented on the 
 // API yet, so we can treat this as a synchernous action
   return {
     type: TASK_MARKED,
-    payload: {
-      /* To Be Completed */
-    }
+    payload: { taskId, newStatus }
   };
 }
