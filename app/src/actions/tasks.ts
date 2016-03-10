@@ -5,40 +5,44 @@ export const TASK_UPDATED = 'TASK_UPDATED';
 export const TASK_MARKED = 'TASK_MARKED';
 
 export function loadTasks() {
-  return {
-    type: TASKS_LOADED,
-    payload: {
-
-    }
+  return (dispatch, getState) => {
+    dispatch({
+      type: TASKS_LOADED,
+      payload: getState().tasks
+    });
   }
+  
 }
 
-export function addTask(task: any, onComplete: Function) {
+export function addTask(/* To Be Completed */) {
+ 
   return {
-    type: TASK_ADDED,
-    payload: {
-
-    }
-  }
-}
-
-export function deleteTask(task: any) {
-  return {
-    type: TASK_DELETED,
-    payload: { }
-  }
-}
-
-export function updateTask(task: any, onComplete: Function) {
-  return {
-    type: TASK_UPDATED,
+    type: 'TBC',
     payload: {}
   }
 }
 
-export function markTask(task: any, newStatus: boolean) {
+export function deleteTask(/* To Be Completed */) {
+  return {
+    type: 'TBC',
+    payload: {}
+  }
+}
+
+export function updateTask(/* To Be Completed */) {
+  return {
+    type: 'TBC',
+    payload: {}
+  }
+}
+
+export function markTask(/* TO BE COMPLETED*/) {
+// NOTE: 'status' field is not implemented on the 
+// API yet, so we can treat this as a synchernous action
   return {
     type: TASK_MARKED,
-    payload: { }
+    payload: {
+      /* To Be Completed */
+    }
   };
 }

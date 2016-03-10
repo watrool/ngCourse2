@@ -7,9 +7,5 @@ const initialState = Map({
 });
 
 export default function filters(state = initialState, action) {
-  switch (action.type) {
-  
-    default:
-      return state;
-  }
+  return state;
 }
