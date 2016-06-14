@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router} from '@angular/router-deprecated'
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'component-one',
@@ -12,6 +12,6 @@ export default class ComponentOne {
      
   }
   onClick () {
-    this._router.navigate(['/ComponentThree',{message: 'Called from _router.Navigate'}]);
+    this._router.navigate(['/component-three','Called from _router.Navigate']);
   }
 }
