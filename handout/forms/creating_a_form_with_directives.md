@@ -82,7 +82,7 @@ _app/my-form.component.html_
 <form (ngSubmit)="onSubmit()">
 ```
 
-We are telling our component that when the form is submitted, the `onSubmit` method of our component will be invoked, so let's define this method.
+We are telling our component that when the form is submitted, the `onSubmit` method of our component will be invoked, so we must define this method.
 
 _app/my-form.component.ts_
 ```javascript
@@ -96,7 +96,7 @@ export class MyForm {
 }
 ```
 
-Now when we click the submit button, we can see the message "Form submitted!" outputted onto the DOM.
+Now when we click the submit button, we see the message "Form submitted!" on the DOM.
 
 [View Example](http://plnkr.co/edit/mp8B8JzRVtN14bSRaf5n?p=preview)
 
