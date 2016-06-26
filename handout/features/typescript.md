@@ -9,7 +9,7 @@ One of TypeScript's primary features is the addition of type information, hence
 the name.  This type information can help make JavaScript programs more
 predictable and easier to reason about. 
 
-Types let developers write more explicit "contracts". In other words, things 
+Types let programmers write more explicit "contracts". In other words, things 
 like function signatures are more explicit. 
 
 Without TS:
