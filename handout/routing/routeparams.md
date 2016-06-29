@@ -1,4 +1,4 @@
-## RouteParams ##
+## Including Route Parameters ##
 
 `RouteParams` is an immutable map of parameters for the given route based on the URL matcher and optional parameters for that route.
 
